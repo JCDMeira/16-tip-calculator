@@ -1,11 +1,15 @@
 import React from 'react';
-import { GlobalStyle } from './Global';
+import { GlobalStyle, Conteiner } from './Global';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>hello</h1>
+      <Conteiner>
+        <div className="splitter">
+          <h1>Splitter</h1>
+        </div>
+      </Conteiner>
     </>
   );
 }
