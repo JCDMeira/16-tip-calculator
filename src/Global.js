@@ -33,6 +33,7 @@ export const Conteiner = styled.div`
     padding-left: 14.2rem;
     padding-right: 13rem;
     word-wrap: break-word;
+    margin-bottom: 3.2rem;
 
     h1 {
       text-align: center;

@@ -2,15 +2,13 @@ import React from 'react';
 import P from 'prop-types';
 
 import { InputConteiner } from './style';
+import dollar from '../../images/icon-dollar.svg';
 
 function MyInput({ children }) {
   return (
-    <InputConteiner>
-      <h3>{children}</h3>
-      <div className="myInput">
-        <p>$</p>
-        <input type="number" />
-      </div>
+    <InputConteiner image={dollar}>
+      <label>{children}</label>
+      <input type="number" className="input" placeholder="0" />
     </InputConteiner>
   );
 }

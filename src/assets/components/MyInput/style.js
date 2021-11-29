@@ -1,42 +1,42 @@
 import styled from 'styled-components';
 
 export const InputConteiner = styled.div`
-  h3 {
+  label {
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.4rem;
 
     color: var(--dark-grayish-cyan);
   }
-  .myInput {
-    width: 31.1rem;
-    height: 4.7rem;
-    padding-left: 1.8rem;
 
-    background: var(--light-grayish-cyan);
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    p {
-      font-weight: normal;
-      font-size: 2.2rem;
-      line-height: 3.3rem;
-
-      color: var(--dark-grayish-cyan);
-    }
-
-    input {
+    .input {
+      margin-top: 0.7rem;
       border: none;
+      width: 31.1rem;
       height: 4.7rem;
+      border-radius: 0.5rem;
+
       background: inherit;
       text-align: right;
+      background-color: var(--light-grayish-cyan) ;
+      background-repeat: no-repeat;
+      background-image: url(${(props) => props.image});
+      background-position: 1.9rem 1.5rem;
+
+      font-family: 'Space Mono';
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      text-align: right;
+
+      color: var(--very-dark-cyan);
+
+
     }
-    input:focus {
-      box-shadow: none;
-      decoration: none;
+
+    .input:focus{
+      outline: 1px solid var(--strong-cyan);
     }
+
   }
 `;

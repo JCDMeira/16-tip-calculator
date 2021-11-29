@@ -10,7 +10,7 @@ function App() {
         <div className="splitter">
           <h1>Splitter</h1>
         </div>
-        <Card></Card>
+        <Card />
       </Conteiner>
     </>
   );
