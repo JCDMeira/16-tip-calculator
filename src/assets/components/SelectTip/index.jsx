@@ -11,9 +11,11 @@ function SelectTip() {
     <TipConteiner>
       <label>Select Tip %</label>
       <div className="allTips">
-        <Button value={5} />
+        {tipValues.map((value, index) => {
+          return <Button value={value} key={index} />;
+        })}
+        <input type="number" className="input" placeholder="Custom" />
       </div>
-      {/* <input type="number" className="input" placeholder="0" /> */}
     </TipConteiner>
   );
 }

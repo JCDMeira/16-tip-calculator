@@ -14,34 +14,40 @@ export const TipConteiner = styled.div`
     color: var(--dark-grayish-cyan);
   }
 
-    /* .input {
-      margin-top: 0.7rem;
-      border: none;
-      width: 31.1rem;
-      height: 4.7rem;
+  .allTips{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem 1.8rem;
+  }
+
+    .input {
+      width: 14.6rem;
+      height: 4.8rem;
+      padding-right: 1.7rem;
+      padding-bottom: 0.1rem;
+
+      background: var(--light-grayish-cyan);
       border-radius: 0.5rem;
+      border: none;
 
-      background: inherit;
-      text-align: right;
-      background-color: var(--light-grayish-cyan) ;
-      background-repeat: no-repeat;
-      background-image: url(${(props) => props.image});
-      background-position: 1.9rem 1.5rem;
-
-      font-family: 'Space Mono';
+      font-size: 2.2rem;
+      line-height: 3.3rem;
       font-weight: bold;
-      font-size: 2.4rem;
-      line-height: 3.6rem;
+      letter-spacing: 0.05em;
+      font-family: 'Space Mono';
       text-align: right;
 
       color: var(--very-dark-cyan);
+    }
 
+    .input::placeholder{
 
+      color: var(--very-dark-cyan);
     }
 
     .input:focus{
       outline: 1px solid var(--strong-cyan);
-    } */
+    }
 
   }
 `;
