@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Bill } from '../Bill';
 import { SelectTip } from '../SelectTip';
-// import { NumberOfPeople } from '../NumberOfPeople';
+import { NumberOfPeople } from '../NumberOfPeople';
 
 import { CardConteiner } from './style';
 
@@ -11,7 +11,7 @@ function Card() {
     <CardConteiner>
       <Bill />
       <SelectTip />
-      {/* <NumberOfPeople /> */}
+      <NumberOfPeople />
     </CardConteiner>
   );
 }

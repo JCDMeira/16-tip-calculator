@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const InputConteiner = styled.div`
+margin-top: 3.2rem;
   label {
     font-weight: bold;
     font-size: 1.6rem;
@@ -15,6 +16,8 @@ export const InputConteiner = styled.div`
       width: 31.1rem;
       height: 4.7rem;
       border-radius: 0.5rem;
+      padding-right: 1.7rem;
+      padding-bottom: 0.1rem;
 
       background: inherit;
       text-align: right;
