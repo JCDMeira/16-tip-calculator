@@ -32,6 +32,7 @@ export const InputConteiner = styled.div`
       border: none;
       height: 4.7rem;
       background: inherit;
+      text-align: right;
     }
     input:focus {
       box-shadow: none;
