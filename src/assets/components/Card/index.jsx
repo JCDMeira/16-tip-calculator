@@ -1,12 +1,15 @@
 import React from 'react';
-import { MyInput } from '../MyInput';
+
+import { Bill } from '../Bill';
+// import { NumberOfPeople } from '../NumberOfPeople';
 
 import { CardConteiner } from './style';
 
 function Card() {
   return (
     <CardConteiner>
-      <MyInput>Bill</MyInput>
+      <Bill />
+      {/* <NumberOfPeople /> */}
     </CardConteiner>
   );
 }
