@@ -1,16 +1,27 @@
-import React, { createContext, useContext } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import P from 'prop-types';
 
 const TotalContext = createContext();
 
 const TotalProvider = ({ children }) => {
-  return <TotalContext.Provider>{children}</TotalContext.Provider>;
+  const [billValue, setBillValue] = useState(0);
+
+  useEffect(() => {
+    console.log(billValue);
+  }, [billValue]);
+
+  return (
+    <TotalContext.Provider value={{ billValue, setBillValue }}>
+      {children}
+    </TotalContext.Provider>
+  );
 };
 
-const TotalCosumer = () => useContext(TotalContext);
+const TotalConsumer = () => useContext(TotalContext);
 
 TotalProvider.propTypes = {
   children: P.object.isRequired,
 };
 
-export { TotalContext, TotalProvider, TotalCosumer };
+export { TotalContext, TotalProvider, TotalConsumer };
