@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const InputConteiner = styled.div`
   margin-bottom: 3.2rem;
+  padding-left: 0.8rem;
   label {
     font-weight: bold;
     font-size: 1.6rem;

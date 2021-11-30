@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TipConteiner = styled.div`
   width: 31rem;
   height: 21.6rem;
+  margin-left: 0.8rem;
 
   label {
     font-weight: bold;

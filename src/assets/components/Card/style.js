@@ -7,5 +7,5 @@ export const CardConteiner = styled.div`
   background: var(--white);
   border-radius: 25px 25px 0px 0px;
 
-  padding: 3.1rem 3.2rem;
+  padding: 3.1rem 2.4rem;
 `;

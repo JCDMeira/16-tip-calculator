@@ -5,6 +5,7 @@ import { SelectTip } from '../SelectTip';
 import { NumberOfPeople } from '../NumberOfPeople';
 
 import { CardConteiner } from './style';
+import { SplitCalc } from '../SplitCalc';
 
 function Card() {
   return (
@@ -12,6 +13,7 @@ function Card() {
       <Bill />
       <SelectTip />
       <NumberOfPeople />
+      <SplitCalc />
     </CardConteiner>
   );
 }

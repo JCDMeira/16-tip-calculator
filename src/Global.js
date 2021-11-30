@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   --strong-cyan: #26C0AB;
   --very-dark-cyan:  #00494D;
   --dark-grayish-cyan: #5E7A7D;
-  --dark-grayish-cyan: #7F9C9F;
+  --dark-cyan: #7F9C9F;
   --light-cyan: #C5E4E7;
   --light-grayish-cyan: #F4FAFA;
   --white: #FFFFFF;
