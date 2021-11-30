@@ -26,6 +26,8 @@ function SplitCalc() {
           <span>$32.79</span>
         </div>
       </div>
+
+      <button>RESET</button>
     </SplitConteiner>
   );
 }

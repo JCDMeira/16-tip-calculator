@@ -37,4 +37,19 @@ export const SplitConteiner = styled.div`
       color: var(--strong-cyan);
     }
   }
+  button {
+    width: 27.8rem;
+    height: 4.8rem;
+    margin-top: 1rem;
+
+    background: var(--strong-cyan);
+    border-radius: 0.5rem;
+    border: none;
+
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 3rem;
+
+    color: var(--very-dark-cyan);
+  }
 `;
