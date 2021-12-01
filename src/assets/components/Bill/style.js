@@ -39,7 +39,7 @@ export const InputConteiner = styled.div`
     }
 
     .input:focus{
-      outline: 1px solid var(--strong-cyan);
+      outline: 2px solid var(--strong-cyan);
     }
 
   }

@@ -12,9 +12,17 @@ padding-left: 0.8rem;
     color: var(--dark-grayish-cyan);
   }
 
+  .warning {
+    display: ${(props) => (props.errorState === true ? 'visible' : 'none')};
+    color: var(--error);
+    margin-left: 1rem;
+
+  }
+
     .input {
       margin-top: 0.7rem;
-      border: none;
+      border: ${(props) =>
+        props.errorState === true ? '2px solid var(--error)' : 'none'};;
       width: 31.1rem;
       height: 4.7rem;
       border-radius: 0.5rem;
@@ -36,11 +44,11 @@ padding-left: 0.8rem;
 
       color: var(--very-dark-cyan);
 
-
+      display: block;
     }
 
     .input:focus{
-      outline: 1px solid var(--strong-cyan);
+      outline: 2px solid var(--strong-cyan);
     }
 
   }

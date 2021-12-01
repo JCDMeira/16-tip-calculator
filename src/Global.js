@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   --light-cyan: #C5E4E7;
   --light-grayish-cyan: #F4FAFA;
   --white: #FFFFFF;
+  --error:  #ff6347 ;
 }
 *{
   padding: 0;

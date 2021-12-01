@@ -6,20 +6,47 @@ const TotalContext = createContext();
 
 const TotalProvider = ({ children }) => {
   const [billValue, setBillValue] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [error, setError] = useState(false);
   const [total, setTotal] = useState(0);
 
-  console.log();
-
   useEffect(() => {
-    if (billValue !== 0 && !isNaN(billValue)) {
-      setTotal(parseFloat(billValue).toFixed(2));
+    if (
+      billValue !== 0 &&
+      !isNaN(billValue) &&
+      people !== 0 &&
+      !isNaN(people)
+    ) {
+      setTotal(() => {
+        let totalAmount = billValue / people;
+        return parseFloat(totalAmount).toFixed(2);
+      });
     } else {
       setTotal('0.00');
     }
-  }, [billValue]);
+  }, [billValue, people]);
+
+  useEffect(() => {
+    if ((billValue > 0 && people === 0) || (billValue > 0 && isNaN(people))) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  }, [billValue, people]);
 
   return (
-    <TotalContext.Provider value={{ billValue, setBillValue, total, setTotal }}>
+    <TotalContext.Provider
+      value={{
+        billValue,
+        setBillValue,
+        people,
+        setPeople,
+        error,
+        setError,
+        total,
+        setTotal,
+      }}
+    >
       {children}
     </TotalContext.Provider>
   );
