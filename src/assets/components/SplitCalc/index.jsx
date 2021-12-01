@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { SplitConteiner } from './style';
 
 function SplitCalc() {
-  const { total } = TotalConsumer();
+  const { total, tipAmount } = TotalConsumer();
 
   return (
     <SplitConteiner>
@@ -16,7 +16,7 @@ function SplitCalc() {
           <span>/ person</span>
         </div>
         <div className="valueAmount">
-          <span>$4.27</span>
+          <span>${tipAmount}</span>
         </div>
       </div>
 

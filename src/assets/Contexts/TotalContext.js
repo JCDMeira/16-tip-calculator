@@ -8,6 +8,8 @@ const TotalProvider = ({ children }) => {
   const [billValue, setBillValue] = useState(0);
   const [people, setPeople] = useState(0);
   const [error, setError] = useState(false);
+  const [tipValue, setTipValue] = useState(0);
+  const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -17,14 +19,16 @@ const TotalProvider = ({ children }) => {
       people !== 0 &&
       !isNaN(people)
     ) {
+      setTipAmount(parseFloat(billValue * (tipValue / 100)).toFixed(2));
       setTotal(() => {
-        let totalAmount = billValue / people;
+        let totalAmount = billValue / people + tipAmount;
         return parseFloat(totalAmount).toFixed(2);
       });
     } else {
       setTotal('0.00');
+      setTipAmount('0.00');
     }
-  }, [billValue, people]);
+  }, [billValue, people, tipValue, tipAmount]);
 
   useEffect(() => {
     if ((billValue > 0 && people === 0) || (billValue > 0 && isNaN(people))) {
@@ -43,6 +47,10 @@ const TotalProvider = ({ children }) => {
         setPeople,
         error,
         setError,
+        tipValue,
+        setTipValue,
+        tipAmount,
+        setTipAmount,
         total,
         setTotal,
       }}
