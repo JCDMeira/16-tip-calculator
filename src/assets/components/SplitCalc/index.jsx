@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { TotalConsumer } from '../../Contexts/TotalContext';
-import { Button } from '../Button';
 
 import { SplitConteiner } from './style';
 

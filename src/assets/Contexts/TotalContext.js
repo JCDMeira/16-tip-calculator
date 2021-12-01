@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import P from 'prop-types';
 
@@ -13,7 +12,6 @@ const TotalProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    console.log(typeof tipAmount === 'number');
     if (
       billValue !== 0 &&
       !isNaN(billValue) &&
