@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { TotalConsumer } from '../../Contexts/TotalContext';
 import { Button } from '../Button';
 
 import { SplitConteiner } from './style';
 
 function SplitCalc() {
+  const { total } = TotalConsumer();
+
   return (
     <SplitConteiner>
       <div className="amount">
@@ -23,7 +26,7 @@ function SplitCalc() {
           <span>/ person</span>
         </div>
         <div className="valueAmount">
-          <span>$32.79</span>
+          <span>${total}</span>
         </div>
       </div>
 

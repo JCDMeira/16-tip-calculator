@@ -6,13 +6,20 @@ const TotalContext = createContext();
 
 const TotalProvider = ({ children }) => {
   const [billValue, setBillValue] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  console.log();
 
   useEffect(() => {
-    console.log(billValue);
+    if (billValue !== 0 && !isNaN(billValue)) {
+      setTotal(parseFloat(billValue).toFixed(2));
+    } else {
+      setTotal('0.00');
+    }
   }, [billValue]);
 
   return (
-    <TotalContext.Provider value={{ billValue, setBillValue }}>
+    <TotalContext.Provider value={{ billValue, setBillValue, total, setTotal }}>
       {children}
     </TotalContext.Provider>
   );
