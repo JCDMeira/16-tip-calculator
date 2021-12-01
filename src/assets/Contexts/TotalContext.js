@@ -13,15 +13,19 @@ const TotalProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    console.log(typeof tipAmount === 'number');
     if (
       billValue !== 0 &&
       !isNaN(billValue) &&
       people !== 0 &&
       !isNaN(people)
     ) {
-      setTipAmount(parseFloat(billValue * (tipValue / 100)).toFixed(2));
+      setTipAmount(() => {
+        let tipAmountCalc = (billValue / people) * (tipValue / 100);
+        return parseFloat(tipAmountCalc).toFixed(2);
+      });
       setTotal(() => {
-        let totalAmount = billValue / people + tipAmount;
+        let totalAmount = billValue / people + parseFloat(tipAmount);
         return parseFloat(totalAmount).toFixed(2);
       });
     } else {

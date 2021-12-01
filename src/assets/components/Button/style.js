@@ -4,7 +4,8 @@ export const ButtonConteiner = styled.button`
   width: 14.6rem;
   height: 4.8rem;
 
-  background: var(--very-dark-cyan);
+  background: ${(props) =>
+    props.isActive ? 'var(--strong-cyan)' : 'var(--very-dark-cyan)'};
   border-radius: 0.5rem;
   border: none;
 
