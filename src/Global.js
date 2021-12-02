@@ -26,7 +26,8 @@ html{
 
 export const Conteiner = styled.div`
   width: 100%;
-  height: 93.3rem;
+  min-height: 93.3rem;
+  height: 100vh;
   background: var(--light-cyan);
   padding-top: 4.1rem;
   display: flex;
