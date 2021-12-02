@@ -56,5 +56,9 @@ export const SplitConteiner = styled.div`
     :hover {
       background: var(--very-light-cyan);
     }
+    :disabled {
+      cursor: not-allowed;
+      filter: opacity(0.2);
+    }
   }
 `;

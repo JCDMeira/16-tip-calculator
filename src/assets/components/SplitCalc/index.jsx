@@ -4,10 +4,18 @@ import { TotalConsumer } from '../../Contexts/TotalContext';
 import { SplitConteiner } from './style';
 
 function SplitCalc() {
-  const { total, tipAmount } = TotalConsumer();
+  const {
+    total,
+    tipAmount,
+    reset,
+    setBillValue,
+    setPeople,
+    setTipValue,
+    setReset,
+  } = TotalConsumer();
 
   return (
-    <SplitConteiner>
+    <SplitConteiner reset={reset}>
       <div className="amount">
         <div className="textAmount">
           <p>Tip Amount</p>
@@ -28,7 +36,17 @@ function SplitCalc() {
         </div>
       </div>
 
-      <button>RESET</button>
+      <button
+        disabled={!reset}
+        onClick={() => {
+          setBillValue(0);
+          setPeople(0);
+          setTipValue(0);
+          setReset(false);
+        }}
+      >
+        RESET
+      </button>
     </SplitConteiner>
   );
 }

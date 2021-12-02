@@ -5,7 +5,7 @@ import person from '../../images/icon-person.svg';
 import { TotalConsumer } from '../../Contexts/TotalContext';
 
 function NumberOfPeople() {
-  const { setPeople, error } = TotalConsumer();
+  const { people, setPeople, error, setReset } = TotalConsumer();
 
   return (
     <InputConteiner image={person} errorState={error}>
@@ -16,8 +16,10 @@ function NumberOfPeople() {
         className="input"
         placeholder="0"
         min="1"
+        value={people === 0 ? '' : people}
         onChange={(event) => {
           setPeople(Math.abs(parseInt(event.target.value)));
+          setReset(true);
         }}
       />
     </InputConteiner>

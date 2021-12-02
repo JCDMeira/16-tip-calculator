@@ -7,7 +7,7 @@ import { TipConteiner } from './style';
 function SelectTip() {
   const tipValues = [5, 10, 15, 25, 50];
 
-  const { setTipValue, tipValue } = TotalConsumer();
+  const { setTipValue, tipValue, setReset } = TotalConsumer();
 
   return (
     <TipConteiner>
@@ -19,7 +19,10 @@ function SelectTip() {
               value={value}
               key={index}
               isActive={tipValue === value}
-              onClick={() => setTipValue(value)}
+              onClick={() => {
+                setTipValue(value);
+                setReset(true);
+              }}
             />
           );
         })}

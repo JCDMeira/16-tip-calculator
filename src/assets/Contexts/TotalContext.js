@@ -10,6 +10,7 @@ const TotalProvider = ({ children }) => {
   const [tipValue, setTipValue] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [reset, setReset] = useState(false);
 
   useEffect(() => {
     if (
@@ -55,6 +56,8 @@ const TotalProvider = ({ children }) => {
         setTipAmount,
         total,
         setTotal,
+        reset,
+        setReset,
       }}
     >
       {children}
