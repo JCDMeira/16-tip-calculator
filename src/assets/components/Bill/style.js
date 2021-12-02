@@ -14,7 +14,9 @@ export const InputConteiner = styled.div`
     .input {
       margin-top: 0.7rem;
       border: none;
-      width: 31.1rem;
+      display: block;
+      /* width: 31.1rem; */
+      width: 82.93333333333334vw;
       height: 4.7rem;
       border-radius: 0.5rem;
       padding-right: 1.7rem;

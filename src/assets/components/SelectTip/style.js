@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const TipConteiner = styled.div`
-  width: 31rem;
+  /* width: 31rem; */
+  width: 82.66666666666667vw;
   height: 21.6rem;
   margin-left: 0.8rem;
 
@@ -22,7 +23,8 @@ export const TipConteiner = styled.div`
   }
 
     .input {
-      width: 14.6rem;
+      /* width: 14.6rem; */
+      width: 38.93333333333333vw;
       height: 4.8rem;
       padding-right: 1.7rem;
       padding-bottom: 0.1rem;

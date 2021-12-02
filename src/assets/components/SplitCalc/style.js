@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const SplitConteiner = styled.div`
-  width: 32.7rem;
+  /* width: 32.7rem; */
+  width: 87.2vw;
   height: 25.7rem;
   border-radius: 1.5rem;
   padding: 4rem 1.9rem 0rem 2.4rem;
@@ -38,7 +39,8 @@ export const SplitConteiner = styled.div`
     }
   }
   button {
-    width: 27.8rem;
+    /* width: 27.8rem; */
+    width: 74.13333333333333vw;
     height: 4.8rem;
     margin-top: 1rem;
     cursor: pointer;

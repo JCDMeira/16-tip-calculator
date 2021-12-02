@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const ButtonConteiner = styled.button`
-  width: 14.6rem;
+  /* width: 14.6rem; */
+  width: 38.93333333333333vw;
   height: 4.8rem;
   cursor: pointer;
 

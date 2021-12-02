@@ -23,7 +23,8 @@ padding-left: 0.8rem;
       margin-top: 0.7rem;
       border: ${(props) =>
         props.errorState === true ? '2px solid var(--error)' : 'none'};;
-      width: 31.1rem;
+      /* width: 31.1rem; */
+      width: 82.93333333333334vw;
       height: 4.7rem;
       border-radius: 0.5rem;
       padding-right: 1.7rem;
