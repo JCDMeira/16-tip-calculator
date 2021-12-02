@@ -41,6 +41,7 @@ export const SplitConteiner = styled.div`
     width: 27.8rem;
     height: 4.8rem;
     margin-top: 1rem;
+    cursor: pointer;
 
     background: var(--strong-cyan);
     border-radius: 0.5rem;
@@ -51,5 +52,9 @@ export const SplitConteiner = styled.div`
     line-height: 3rem;
 
     color: var(--very-dark-cyan);
+
+    :hover {
+      background: var(--very-light-cyan);
+    }
   }
 `;
