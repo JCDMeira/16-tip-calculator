@@ -20,7 +20,7 @@ function Bill() {
         step="0.01"
         value={billValue === 0 ? '' : billValue}
         onChange={(event) => {
-          setBillValue(Math.abs(parseFloat(event.target.value)));
+          setBillValue(Math.abs(parseFloat(event.target.value)) || 0);
           setReset(true);
         }}
       />

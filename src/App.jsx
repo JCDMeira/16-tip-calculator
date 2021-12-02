@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card } from './assets/components/Card';
 import { GlobalStyle, Conteiner } from './Global';
+import { Card } from './assets/components/Card';
 
 function App() {
   return (

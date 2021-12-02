@@ -18,7 +18,7 @@ function NumberOfPeople() {
         min="1"
         value={people === 0 ? '' : people}
         onChange={(event) => {
-          setPeople(Math.abs(parseInt(event.target.value)));
+          setPeople(Math.abs(parseInt(event.target.value)) || 0);
           setReset(true);
         }}
       />

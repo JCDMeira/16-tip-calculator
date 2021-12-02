@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { CardConteiner } from './style';
+
 import { Bill } from '../Bill';
 import { SelectTip } from '../SelectTip';
 import { NumberOfPeople } from '../NumberOfPeople';
 
-import { CardConteiner } from './style';
 import { SplitCalc } from '../SplitCalc';
 
 function Card() {
