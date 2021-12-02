@@ -29,11 +29,14 @@ export const Conteiner = styled.div`
   height: 93.3rem;
   background: var(--light-cyan);
   padding-top: 4.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .splitter {
-    width: 100%;
-    padding-left: 14.2rem;
-    padding-right: 13rem;
+    width: 9.8rem;
+    height: 6.8rem;
+    margin-left: 1rem;
     word-wrap: break-word;
     margin-bottom: 3.2rem;
 
@@ -47,6 +50,12 @@ export const Conteiner = styled.div`
 
       color: var(--very-dark-cyan);
       text-transform: uppercase;
+    }
+  }
+  @media (min-width: 375px) {
+    .splitter {
+      /* padding-left: 14.2rem; */
+      /* padding-right: 13rem; */
     }
   }
 `;
