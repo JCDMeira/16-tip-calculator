@@ -30,6 +30,7 @@ function SelectTip() {
           type="number"
           className="input"
           placeholder="Custom"
+          min="0"
           onChange={(event) => {
             setTipValue(event.target.value);
           }}
