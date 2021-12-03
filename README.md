@@ -42,15 +42,14 @@ Users should be able to:
 
 <p  align="center"><img width="720px" src="./presentation/desktop.png" align="center"></img></p>
 
-<!--### result of my work
+### result of my work
 
-<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p> -->
+<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p>
 
 ### Links
 
-<!-- - Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/single-price-grid-with-reactjs-YR5dhXAtZ)
-- Live Site URL: [check the result](https://jcdmeira-single-price.netlify.app)
--->
+- Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/tip-calculator-with-reactjs-and-styledcomponenys-KSPgNB9yB)
+- Live Site URL: [check the result](https://jcdmeira-tip-calculator.netlify.app)
 
 - My figma design: [Figma](https://www.figma.com/file/DKN33fqAdPuGjT2RdbKzPj/16-tip-calculator)
 
