@@ -29,7 +29,7 @@ Users should be able to:
 ## Screenshot
 
 ### Mobile design
-<!--
+
 <p  align="center">
   <img width="300px" src="./presentation/mobile.png" align="center"></img>
 </p>
@@ -42,7 +42,7 @@ Users should be able to:
 
 <p  align="center"><img width="720px" src="./presentation/desktop.png" align="center"></img></p>
 
-### result of my work
+<!--### result of my work
 
 <p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p> -->
 
@@ -50,7 +50,9 @@ Users should be able to:
 
 <!-- - Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/single-price-grid-with-reactjs-YR5dhXAtZ)
 - Live Site URL: [check the result](https://jcdmeira-single-price.netlify.app)
-- My figma design: [Figma](https://www.figma.com/file/qoi5g7sQ81YZysFwJJoWIz/07---Single-price?node-id=0%3A1) -->
+-->
+
+- My figma design: [Figma](https://www.figma.com/file/DKN33fqAdPuGjT2RdbKzPj/16-tip-calculator)
 
 ## My process
 
@@ -60,43 +62,149 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
-<!--
-Using the grid template areas to define occupied spaces with an alias
 
-```CSS
-  .content {
-  display: grid;
-  gap: 0;
-  grid-template-areas:
-    'field1'
-    'field2'
-    'field3';
+How to use the useContext hook
+
+```JS
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import P from 'prop-types';
+
+// @ Um contexto com nome AppContext é criado, a partir do createContext
+const TotalContext = createContext();
+
+const TotalProvider = ({ children }) => {
+  const [billValue, setBillValue] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [error, setError] = useState(false);
+  const [tipValue, setTipValue] = useState(0);
+  const [tipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [reset, setReset] = useState(false);
+
+  useEffect(() => {
+    if (
+      billValue !== 0 &&
+      !isNaN(billValue) &&
+      people !== 0 &&
+      !isNaN(people)
+    ) {
+      setTipAmount(() => {
+        let tipAmountCalc = (billValue / people) * (tipValue / 100);
+        return parseFloat(tipAmountCalc).toFixed(2);
+      });
+      setTotal(() => {
+        let totalAmount = billValue / people + parseFloat(tipAmount);
+        return parseFloat(totalAmount).toFixed(2);
+      });
+    } else {
+      setTotal('0.00');
+      setTipAmount('0.00');
+    }
+  }, [billValue, people, tipValue, tipAmount]);
+
+  useEffect(() => {
+    if ((billValue > 0 && people === 0) || (billValue > 0 && isNaN(people))) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  }, [billValue, people]);
+
+  return (
+    // @ Aqui se provém o contexto, passando os valores que esse contexto irá sustentar.
+    // @ esses valores serão visivéis para todos os filhos do contexto (expresso em index.js)
+
+    <TotalContext.Provider
+      value={{
+        billValue,
+        setBillValue,
+        people,
+        setPeople,
+        error,
+        setError,
+        tipValue,
+        setTipValue,
+        tipAmount,
+        setTipAmount,
+        total,
+        setTotal,
+        reset,
+        setReset,
+      }}
+    >
+      {children}
+    </TotalContext.Provider>
+  );
+};
+
+/*
+  @ Cria o consumidor do contexto, para acessa o contexto teria que importar o
+  @ useContext no lugar de uso, então usar algo como :
+  ? const { valorPassado1, valorPassado2 } = useContext(contextoCriado);
+  @ mas ao invés disso se o contexto com uma arrow function, podendo
+  @ consumir diretamente ao usar a constante que recebe o valor.
+  @ ficando com :
+  ? const {valorPassado1, valorPassado2} = useGlobalContext();
+*/
+
+const TotalConsumer = () => useContext(TotalContext);
+
+TotalProvider.propTypes = {
+  children: P.object.isRequired,
+};
+
+export { TotalContext, TotalProvider, TotalConsumer };
+
+```
+
+```JSX
+import React from 'react';
+
+import { InputConteiner } from './style';
+import dollar from '../../images/icon-dollar.svg';
+
+import { TotalConsumer } from '../../Contexts/TotalContext';
+
+function Bill() {
+  const { billValue, setBillValue, setReset } = TotalConsumer();
+
+  return (
+    <InputConteiner image={dollar}>
+      <label>Bill</label>
+      <input
+        type="number"
+        className="input"
+        placeholder="0"
+        min="0"
+        step="0.01"
+        value={billValue === 0 ? '' : billValue}  // condicional para não ser possível colocar 0 no estado
+        onChange={(event) => {
+          setBillValue(Math.abs(parseFloat(event.target.value)) || 0);  // short circuit que não permite NaN indo para o state
+          setReset(true);
+        }}
+      />
+    </InputConteiner>
+  );
 }
 
-.field1 {
-  grid-area: field1;
-}
-.field2 {
-  grid-area: field2;
-}
-.field3 {
-  grid-area: field3;
-}
-@media (min-width: 900px) {
-  .content {
-    grid-template-areas:
-      'field1 field1'
-      'field2 field3';
-  }
-}
-``` -->
+export { Bill };
+```
 
 ### Useful resources
 
 - [react tutorial](https://pt-br.reactjs.org/tutorial/tutorial.html) - This helped me structure the components and build the proposed page.
-<!-- - [my figma design](https://www.figma.com/file/qoi5g7sQ81YZysFwJJoWIz/07---Single-price?node-id=0%3A1) - My figma design for help anyone who wants to build this challenge. -->
+- [my figma design](https://www.figma.com/file/DKN33fqAdPuGjT2RdbKzPj/16-tip-calculator) - My figma design for help anyone who wants to build this challenge.
 - [CSS units conversor - px to VH/VW/REM](https://it-news.pw/pxtovh/) - CSS units conversor .
 - [Converting Colors](https://convertingcolors.com) - HSL for all color systems.
+- [input border remove](https://pt.stackoverflow.com/questions/5216/como-remover-borda-dos-input-e-textarea-de-todos-os-browsers-quando-clicado)
+- [placeholder](https://www.devmedia.com.br/placeholder-em-html5-texto-padrao-de-input/24503)
+- [css in placeholder](https://www.horadecodar.com.br/2019/07/16/como-adicionar-css-no-placeholder/)
+- [placeholder how to style](https://www.devmedia.com.br/html5-placeholder-como-estilizar/24589)
+- [outline](https://developer.mozilla.org/pt-BR/docs/Web/CSS/outline)
+- [remove border css](https://www.ti-enxame.com/pt/css/como-remover-o-destaque-da-borda-em-um-elemento-de-texto-de-entrada/967095861/)
+- [Prop Drilling](https://www.alura.com.br/artigos/prop-drilling-no-react-js)
+- [context API](https://www.youtube.com/watch?v=c9BOd9X-SCM)
+- [useContext - react hooks](https://www.youtube.com/watch?v=0UVYtx_C87w)
 
 ## Author
 
