@@ -53,10 +53,13 @@ export const Conteiner = styled.div`
       text-transform: uppercase;
     }
   }
-  @media (min-width: 375px) {
+  @media (min-width: 900px) {
+    min-height: 80rem;
+    height: 100vh;
+    padding-top: 15.4rem;
+
     .splitter {
-      /* padding-left: 14.2rem; */
-      /* padding-right: 13rem; */
+      margin-bottom: 8.4rem;
     }
   }
 `;

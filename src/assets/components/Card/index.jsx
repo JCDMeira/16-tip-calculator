@@ -11,10 +11,14 @@ import { SplitCalc } from '../SplitCalc';
 function Card() {
   return (
     <CardConteiner>
-      <Bill />
-      <SelectTip />
-      <NumberOfPeople />
-      <SplitCalc />
+      <div className="flex1">
+        <Bill />
+        <SelectTip />
+        <NumberOfPeople />
+      </div>
+      <div className="flex2">
+        <SplitCalc />
+      </div>
     </CardConteiner>
   );
 }

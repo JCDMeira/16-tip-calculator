@@ -15,7 +15,6 @@ export const InputConteiner = styled.div`
       margin-top: 0.7rem;
       border: none;
       display: block;
-      /* width: 31.1rem; */
       width: 82.93333333333334vw;
       height: 4.7rem;
       border-radius: 0.5rem;
@@ -44,5 +43,14 @@ export const InputConteiner = styled.div`
       outline: 2px solid var(--strong-cyan);
     }
 
+  }
+
+  @media (min-width: 900px) {
+    margin-top: 1.3rem;
+    margin-bottom: 4rem;
+    .input{
+      width: 37.9rem;
+      height: 4.7rem;
+    }
   }
 `;

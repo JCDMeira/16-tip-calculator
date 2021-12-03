@@ -16,4 +16,18 @@ export const CardConteiner = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @media (min-width: 900px) {
+    width: 92.3rem;
+    height: 48.2rem;
+    min-height: 48.2rem;
+
+    border-radius: 2.5rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: initial;
+
+    padding: 2.6rem 3.4rem 3.3rem 4.2rem;
+  }
 `;

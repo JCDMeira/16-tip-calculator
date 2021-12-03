@@ -21,4 +21,8 @@ export const ButtonConteiner = styled.button`
     background: var(--strong-cyan);
     filter: opacity(0.8);
   }
+
+  @media (min-width: 900px) {
+    width: 11.7rem;
+  }
 `;

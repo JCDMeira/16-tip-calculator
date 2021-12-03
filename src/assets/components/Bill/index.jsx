@@ -6,7 +6,6 @@ import dollar from '../../images/icon-dollar.svg';
 import { TotalConsumer } from '../../Contexts/TotalContext';
 
 function Bill() {
-  // eslint-disable-next-line no-unused-vars
   const { billValue, setBillValue, setReset } = TotalConsumer();
 
   return (

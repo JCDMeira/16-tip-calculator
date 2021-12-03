@@ -53,4 +53,11 @@ padding-left: 0.8rem;
     }
 
   }
+
+  @media (min-width: 900px) {
+    margin-top: 3rem;
+    .input{
+      width: 37.9rem;
+      height: 4.7rem;
+    }
 `;
